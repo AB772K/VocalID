@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #5680E9;
+  --light-accent: #84CEEB;
+  --secondary: #5AB9EA;
+  --soft-bg: #C1C8E4;
+  --highlight: #8860D0;
+
+  --text-primary: #1d2a44;
+  --text-secondary: #4b5d7a;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.84);
+  --border-soft: rgba(86, 128, 233, 0.26);
+  --shadow-soft: 0 14px 35px rgba(39, 82, 177, 0.22);
+  --shadow-glow: 0 10px 26px rgba(136, 96, 208, 0.25);
+
+  --btn-gradient-main: linear-gradient(135deg, #5680E9 0%, #8860D0 100%);
+  --btn-gradient-alt: linear-gradient(135deg, #5AB9EA 0%, #5680E9 100%);
+  --surface-gradient: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(193, 200, 228, 0.52) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary);
+  background:
+    radial-gradient(1200px circle at 8% 2%, rgba(132, 206, 235, 0.58), transparent 56%),
+    radial-gradient(900px circle at 92% 12%, rgba(136, 96, 208, 0.34), transparent 50%),
+    linear-gradient(140deg, #c1c8e4 0%, #84ceeb 35%, #5ab9ea 70%, #5680e9 100%);
+  background-attachment: fixed;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+.log-row,
+.tab-btn,
+.link {
+  transition: all 0.25s ease;
+}
+
+button:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.42s ease both;
+}
+
+.slide-up {
+  animation: slideUp 0.42s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

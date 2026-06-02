@@ -1,0 +1,16 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+mysql-connector-python==8.1.0
+pydantic==2.5.0
+python-multipart==0.0.6
+librosa==0.10.1
+numpy>=1.21.0
+scipy>=1.7.0
+soundfile==0.12.1
+resampy==0.4.2
+audioread==3.0.1
+openai-whisper==20231117
+python-Levenshtein
+speechbrain
+transformers==4.37.0
+# conda install ffmpeg

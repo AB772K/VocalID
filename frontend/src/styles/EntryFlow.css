@@ -1,0 +1,233 @@
+.app-entry {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 18px;
+}
+
+.splash-screen {
+  width: min(520px, 92vw);
+  padding: 48px 32px 44px;
+  border-radius: 28px;
+  background: var(--surface-gradient);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  animation: splashFade 2.5s ease forwards;
+}
+
+.splash-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--btn-gradient-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(--shadow-glow);
+}
+
+.splash-mic {
+  width: 16px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  position: relative;
+}
+
+.splash-mic::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 4px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.splash-wave {
+  position: absolute;
+  width: 18px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  opacity: 0.7;
+  animation: wavePulse 1.2s ease-in-out infinite;
+}
+
+.splash-wave.wave-left {
+  left: 12px;
+}
+
+.splash-wave.wave-right {
+  right: 12px;
+  animation-delay: 0.2s;
+}
+
+.splash-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+}
+
+.splash-tagline {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.onboarding {
+  width: min(560px, 94vw);
+}
+
+.onboarding-card {
+  padding: 40px 34px 32px;
+  border-radius: 28px;
+  background: var(--surface-gradient);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.45s ease both;
+}
+
+.onboarding-skip-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.onboarding-skip {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.onboarding-skip:hover {
+  color: var(--primary);
+}
+
+.onboarding-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 22px;
+  margin: 6px auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2c3a63;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-glow);
+}
+
+.onboarding-icon svg {
+  width: 46px;
+  height: 46px;
+}
+
+.onboarding-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.onboarding-body {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.onboarding-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px 0 26px;
+}
+
+.onboarding-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(86, 128, 233, 0.3);
+  transition: all 0.25s ease;
+}
+
+.onboarding-dot.active {
+  width: 26px;
+  background: var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.onboarding-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.onboarding-primary {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--btn-gradient-main);
+  box-shadow: var(--shadow-glow);
+  cursor: pointer;
+}
+
+.onboarding-primary:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes splashFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes wavePulse {
+  0%,
+  100% {
+    transform: scale(0.88);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 600px) {
+  .splash-screen {
+    padding: 38px 24px 34px;
+  }
+
+  .splash-title {
+    font-size: 2rem;
+  }
+
+  .onboarding-card {
+    padding: 34px 24px 28px;
+  }
+
+  .onboarding-title {
+    font-size: 1.5rem;
+  }
+}

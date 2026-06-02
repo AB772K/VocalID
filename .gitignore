@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.*
+
+# AI models
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+
+# Uploaded audio
+backend/uploads/
+
+# Node
+node_modules/
+.cache/
+
+# React build
+frontend/build/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store

@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: vocalid-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: vocalid_db
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - vocalid-net
+
+  backend:
+    build: ./backend
+    container_name: vocalid-backend
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: vocalid_db
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      - db
+    networks:
+      - vocalid-net
+
+  frontend:
+    build: ./frontend
+    container_name: vocalid-frontend
+    restart: always
+    ports:
+      - "9000:80"   # Change to 8080 or any free port if 9000 is used; on Azure VM we'll use 80:80
+    depends_on:
+      - backend
+    networks:
+      - vocalid-net
+
+volumes:
+  mysql_data:
+  uploads_data:
+
+networks:
+  vocalid-net:
+    driver: bridge
