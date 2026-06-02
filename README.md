@@ -18,8 +18,8 @@ ML Models: OpenAI Whisper, SpeechBrain ECAPA‑TDNN, Hugging Face wav2vec2 (fine
 Audio: Librosa, FFmpeg | Deployment: Docker, Uvicorn, Nginx
 
 👨‍💻 **Team:**
-Abdul Basit – AI Integration, Model Fine‑Tuning, Anti‑Spoofing
-Farrukh Zia – Backend, Frontend, Database, Deployment, Attendance Logic
+Abdul Basit - AI Integration, Model Fine‑Tuning, Anti‑Spoofing
+Farrukh Zia - Backend, Frontend, Database, Deployment, Attendance Logic
 
 🏫 **University:**
 COMSATS University Islamabad, Wah Campus
